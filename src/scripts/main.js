@@ -3,8 +3,12 @@
 function addMessage(messageText, isError = false) {
   const message = document.createElement('div');
 
+  message.classList.add('message');
   message.textContent = messageText;
-  message.classList.add('message', isError ? 'error-message' : null);
+
+  if (isError) {
+    message.classList.add('error-message');
+  }
 
   document.body.append(message);
 }
